@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <?!= include('Styles'); ?>
+    <?!= include('Javascript'); ?>
+  </head>
+  <body>
+    <h1>🅼🅴🅽🆄</h1>
+
+    <button id="sync-kirk" type="button" onclick="callProcess()">
+      Sincronizar processo do Kirk
+    </button>
+
+    <div class="input-container">
+      <label for="folder_id">ID da pasta: </label>
+      <input type="text" id="folder_id" name="folder_id">
+    </div>
+
+    <button id="search-NF" type="button" onclick="callSearchNF()">
+      Buscar notas fiscais 📂
+    </button>
+
+    <button id="cashMarketing" type="button" onclick="callCashMarketing()">
+      Cash Marketing 💲
+    </button>
+
+    <button id="instance-process" type="button" onclick="callInstanceProcess()">
+      Instanciar processo
+    </button>
+  </body>
+</html>

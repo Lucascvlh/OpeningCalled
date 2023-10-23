@@ -1,0 +1,60 @@
+<script>
+  function handleDisableButton(element) {
+    element.setAttribute('disabled', true);
+    element.classList.add('disabled');
+  };
+
+  function callProcess() {
+    const syncButton = document.getElementById('sync-kirk');
+
+    handleDisableButton(syncButton);
+
+    function handleEnableSyncClick() {
+      syncButton.removeAttribute('disabled');
+      syncButton.classList.remove('disabled');
+    };
+    google.script.run.withSuccessHandler(handleEnableSyncClick).getProcess();
+    google.script.run.withFailureHandler(handleEnableSyncClick).getProcess();
+  };
+
+  function callInstanceProcess() {
+    const syncButton = document.getElementById('instance-process');
+
+    handleDisableButton(syncButton);
+
+    function handleEnableInstanceClick() {
+      syncButton.removeAttribute('disabled');
+      syncButton.classList.remove('disabled');
+    };
+    google.script.run.withSuccessHandler(handleEnableInstanceClick).instanceProcess();
+  };
+
+  function callSearchNF() {
+    const syncButton = document.getElementById('search-NF');
+
+    handleDisableButton(syncButton);
+    
+    var folderId = document.getElementById('folder_id').value;
+    
+    function handleEnableSyncClick() {
+      syncButton.removeAttribute('disabled');
+      syncButton.classList.remove('disabled');
+    };
+    google.script.run.withSuccessHandler(handleEnableSyncClick).processFolderId(folderId);
+    google.script.run.withFailureHandler(handleEnableSyncClick).processFolderId(folderId);
+  };
+
+  function callCashMarketing() {
+    const syncButton = document.getElementById('cashMarketing');
+
+    handleDisableButton(syncButton);
+    
+    function handleEnableSyncClick() {
+      syncButton.removeAttribute('disabled');
+      syncButton.classList.remove('disabled');
+    };
+    google.script.run.withSuccessHandler(handleEnableSyncClick).cashMarketing();
+    google.script.run.withFailureHandler(handleEnableSyncClick).cashMarketing();
+  };
+
+</script>
